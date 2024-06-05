@@ -7,7 +7,7 @@ Shortcuts
 ---------
 
 - [TED-Gen](./train/)
-- [Modified DRIT](./Modified-DRIT/)
+- [Trident strategy enhanced DRIT](./Enhanced-DRIT/)
 - [Generate simulation data by Computem](./Computem_Gen/)
 
 
@@ -20,9 +20,6 @@ Auto-resolving atomic structure at van der Waal interfaces using a generative mo
 [[Paper](https://github.com/dptech-corp/TED-Gen)]
 
 Authors: Wenqiang Huang, Yuchen Jin, Zhemin Li, Lin Yao*, Yun Chen, Zheng Luo, Shen Zhou, Hongxia Wang, Jinguo Lin, Feng Liu, Zhifeng Gao, Jun Cheng, Linfeng Zhang, Fangping Ouyang*, Shanshan Wang* & Jin Zhang 
-
-<p align="center"><img src="image/img01.png" width=60%></p>
-<p align="center"><b>ML workflow of the atomic structure inference at van der Waal interfaces</b></p>
 
 Unveiling atomic structures is significant for the relationship construction between microscopic configurations and macroscopic properties of materials.  However, we still lack a rapid, accurate, and robust approach to automatically resolve complex patterns in atomic-resolution microscopy.  Here, we present a Trident strategy-enhanced disentangled representation learning method (a generative model), which utilizes a few unlabeled experimental images with abundant low-cost simulated images to generate a large corpus of annotated simulation data that closely resembles experimental conditions, realizing simultaneous achievement of high quality and large volumes of the training dataset.  A structural inference model is then trained via a residual neural network which can directly deduce the interlayer slip and rotation of diversified and complicated stacking patterns at van der Waals (vdWs) interfaces with picometer-scale accuracy across various materials (ReS2, ReSe2, and MoS2) with different layer numbers (bilayer and trilayers) and demonstrates robustness to defects, imaging quality, and surface contaminations.  The framework can also identify pattern transition interfaces, quantify subtle motif variations, and discriminate moiré patterns that are undistinguishable in frequency domains.  The high-throughput processing ability of our method helps discover a novel vdW epitaxy where various thermodynamically favorable slip stackings can coexist, demonstrating the machine learning contribution to the new knowledge emergence.
 
@@ -38,7 +35,7 @@ cd code
 
 Download datasets
 --------------------------------------------------------------------
-Dataset of training Modified-DRIT and Stacking-Pattern-Analyzer is available at https://xxxxx
+Dataset of training Trident strategy-Enhanced-DRIT and Stacking-Pattern-Analyzer is available at https://zenodo.org/uploads/11446947
 
 Generate datasets
 --------------------------------------------------------------------
@@ -53,30 +50,18 @@ You can also go to [this page](https://sourceforge.net/projects/computem/) to ob
 
 Check this [subfolder](./Computem_Gen/) for more detalis.
 
-### Generate realistic stem images with Modified-DRIT
-You can convert the noise-free stem images into realistic stem images using the [Modified-DRIT](./Modified-DRIT/) model we provide.
+### Generate realistic stem images with Trident strategy-Enhanced-DRIT
+You can convert the noise-free stem images into realistic stem images using the [Trident strategy-Enhanced-DRIT](./Enhanced-DRIT/) model we provide.
 
-Before you start [training](./Modified-DRIT/src/train.py) or [generating](./Modified-DRIT/src/test_transfer.py), download the necessary model parameter files and datasets and configure them in the [option.py](./Modified-DRIT/src/options.py) file.
+Before you start [training](./Enhanced-DRIT/src/train.py) or [generating](./Enhanced-DRIT/src/test_transfer.py), download the necessary model parameter files and datasets and configure them in the [option.py](./Enhanced-DRIT/src/options.py) file.
 
-Check this [subfolder](./Modified-DRIT/) for more detalis.
+Check this [subfolder](./Enhanced-DRIT/) for more detalis.
 
 Stacking Pattern Analyzer
 --------------------------------------------------------------------
 Once the dataset is ready, you can train a stacking pattern analysis model based on the code we provide. Alternatively, you can parse your material using existing model parameters.
 
 Check this [subfolder](./Stacking-Pattern-Analyzer/) for more detalis.
-
-### Training Examples
-
-```
-python train.py --dataroot ../datasets/ --task slip
-```
-
-### Testing Examples
-
-```
-python infer.py --image_path ../datasets/1.png --task slip --weight_path ../model.pth
-```
 
 Citation
 --------
