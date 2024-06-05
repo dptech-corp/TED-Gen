@@ -7,10 +7,6 @@ from saver import save_my_imgs
 import os
 import sys
 
-log_print = open('./src/test_transfer.log', 'a')
-sys.stdout = log_print
-sys.stderr = log_print
-
 def main():
   # parse options
   parser = TestOptions()
@@ -28,52 +24,49 @@ def main():
     loader = torch.utils.data.DataLoader(datasetB, batch_size=1, num_workers=opts.nThreads)
     loader_attr = torch.utils.data.DataLoader(datasetA, batch_size=1, num_workers=opts.nThreads, shuffle=True)
 
-  list = [279,329,349,599,679,709]
   rept_num = 1
   
-  for id in list:
-    print('start generate pth ' + str(id))
-    opts.name = str(id)
-    opts.resume = '/vepfs/fs_users/ycjin/moore/DRIT/results/2023-09-12-05_300/'+str(id).zfill(5)+'.pth'
+  opts.name = '111'
+  opts.resume = '1.pth'
 
-    # model
-    print('\n--- load model ---')
-    model = DRIT(opts)
-    model.train()
-    model.setgpu(opts.gpu)
-    model.resume(opts.resume, train=True)
+  # model
+  print('\n--- load model ---')
+  model = DRIT(opts)
+  model.train()
+  model.setgpu(opts.gpu)
+  model.resume(opts.resume, train=True)
 
-    # directory
-    result_dir = opts.result_dir
-    if not os.path.exists(result_dir):
-      os.mkdir(result_dir)
+  # directory
+  result_dir = opts.result_dir
+  if not os.path.exists(result_dir):
+    os.mkdir(result_dir)
 
-    # test
-    print('\n--- testing ---')
-    for i in range(rept_num):
-      for idx1, (img1, label, name1) in enumerate(loader):
-        # if idx1 > 10:break
-        print('{}/{}'.format(idx1, len(loader)))
-        img1 = img1.cuda()
-        imgs = []
-        labels = []
-        names = []
-        for idx2, (img2, name2) in enumerate(loader_attr):
-          if idx2 == opts.num:
-            break
-          img2 = img2.cuda()
-          with torch.no_grad():
-            if opts.a2b:
-              img = model.test_forward_transfer(img1, img2, a2b=True)
-            else:
-              img = model.test_forward_transfer(img2, img1, a2b=False)
-          imgs.append(img)
-          labels.append(label)
-          names.append(name1[0]+'_'+str(i)+str(idx2))
+  # test
+  print('\n--- testing ---')
+  for i in range(rept_num):
+    for idx1, (img1, label, name1) in enumerate(loader):
+      # if idx1 > 10:break
+      print('{}/{}'.format(idx1, len(loader)))
+      img1 = img1.cuda()
+      imgs = []
+      labels = []
+      names = []
+      for idx2, (img2, name2) in enumerate(loader_attr):
+        if idx2 == opts.num:
+          break
+        img2 = img2.cuda()
+        with torch.no_grad():
+          if opts.a2b:
+            img = model.test_forward_transfer(img1, img2, a2b=True)
+          else:
+            img = model.test_forward_transfer(img2, img1, a2b=False)
+        imgs.append(img)
+        labels.append(label)
+        names.append(name1[0]+'_'+str(i)+str(idx2))
 
 
-        save_my_imgs(imgs, names, result_dir + '/imgs', opts.name)
-        save_my_imgs(labels, names, result_dir + '/labels', opts.name, True)
+      save_my_imgs(imgs, names, result_dir + '/imgs', opts.name)
+      save_my_imgs(labels, names, result_dir + '/labels', opts.name, True)
 
   return
 
