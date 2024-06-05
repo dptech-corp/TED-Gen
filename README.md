@@ -1,5 +1,3 @@
-TED-Gen
-
 Official Repository for the paper Auto-resolving atomic structure at van der Waal interfaces using a generative model.
 ==================================================
 
