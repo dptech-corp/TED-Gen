@@ -35,7 +35,7 @@ cd code
 
 Download datasets
 --------------------------------------------------------------------
-Dataset of training Trident strategy-Enhanced-DRIT and Stacking-Pattern-Analyzer is available at https://zenodo.org/uploads/11446947
+Dataset of training Trident strategy-Enhanced-DRIT and Stacking-Pattern-Analyzer is available at https://zenodo.org/records/11446947
 
 Generate datasets
 --------------------------------------------------------------------
