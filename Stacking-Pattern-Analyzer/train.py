@@ -8,7 +8,7 @@ from loss import re_loss, mo_loss, re3_loss
 
 ## slip or twist or 3layer-slip
 task = 'slip'
-dataset_path='/vepfs/fs_users/ycjin/moore/simulation/database18/data'
+dataset_path='./dataset/..'
 batch_size = 32
 learning_rate = 1e-3
 num_epochs = 3000

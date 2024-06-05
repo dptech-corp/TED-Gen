@@ -5,8 +5,11 @@ import torchvision.transforms.functional as TF
 import torchvision.models as models
 from model import StructNet
 
-weight_path = '/vepfs/fs_ckps/ycjin/nudt/sim/ablation_update/model_params-800.pth'
-image_path = '/vepfs/fs_users/ycjin/moore/simulation/ReSe2/exp/4.png'
+# Model parameter path
+weight_path = '1.pth'
+# Image path
+image_path = '1.png'
+# Task type
 task = 'slip'
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
