@@ -142,7 +142,7 @@ cd Enhanced-DRIT
 python ./src/train.py
 ```
 
-#### generating
+#### generate
 
 You can use the model parameters we provide or your own trained model parameters to obtain realistic STEM images. In the recommended configuration, the average time to generate an 1024*1024 image is about 1s.
 
@@ -176,7 +176,7 @@ python train.py
 
 #### inference
 
-We recommend using an [online app](https://bohrium.dp.tech/apps/stacking-pattern-analyzer) to verify the parsing results.You can also test it in this [ipynb](./Stacking-Pattern-Analyzer/infer.ipynb) file. In the recommended configuration, inference in ipynb takes an average of about 1s per image.
+We recommend using our [online app](https://bohrium.dp.tech/apps/stacking-pattern-analyzer) to verify the parsing results.You can also test it in this [ipynb](./Stacking-Pattern-Analyzer/infer.ipynb) file. In the recommended configuration, inference in ipynb takes an average of about 1s per image.
 
 Check this [Stacking-Pattern-Analyzer](./Stacking-Pattern-Analyzer/) for more detalis.
 
