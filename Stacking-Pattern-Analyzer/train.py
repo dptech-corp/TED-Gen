@@ -8,7 +8,7 @@ from loss import re_loss, mo_loss, re3_loss
 
 ## slip or twist or 3layer-slip
 task = 'slip'
-dataset_path='./dataset/..'
+dataset_path='./dataset/'
 batch_size = 32
 learning_rate = 1e-3
 num_epochs = 3000
@@ -55,9 +55,9 @@ for epoch in range(num_epochs):
     lr = optimizer.param_groups[0]['lr']
 
     if epoch % 100 == 0:
-        params = model.module.state_dict()
+        params = model.state_dict()
         if epoch != 0:
-            torch.save(params, f'./model_params-{epoch}.pth')
+            torch.save(params, f'./model/model_params-{epoch}.pth')
 
         
     print(f'Epoch {epoch}, Total Loss {sum(train_losses) / len(train_losses)}, Shift Loss {sum(shift_losses) / len(shift_losses)}, lr {lr}')

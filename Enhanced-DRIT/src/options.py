@@ -9,11 +9,11 @@ class TrainOptions():
     self.parser = argparse.ArgumentParser()
 
     # data loader related
-    self.parser.add_argument('--dataroot', type=str, default='../datasets/database', help='path of data')
+    self.parser.add_argument('--dataroot', type=str, default='./datasets/example_data', help='path of data')
     self.parser.add_argument('--phase', type=str, default='train', help='phase for dataloading')
     self.parser.add_argument('--batch_size', type=int, default=2, help='batch size')
     self.parser.add_argument('--resize_size', type=int, default=512, help='resized image size for training')
-    self.parser.add_argument('--crop_size', type=int, default=512, help='cropped image size for training')
+    self.parser.add_argument('--crop_size', type=int, default=300, help='cropped image size for training')
     self.parser.add_argument('--input_dim_a', type=int, default=1, help='# of input channels for domain A')
     self.parser.add_argument('--input_dim_b', type=int, default=1, help='# of input channels for domain B')
     self.parser.add_argument('--nThreads', type=int, default=8, help='# of threads for data loader')
@@ -21,8 +21,8 @@ class TrainOptions():
 
     # ouptput related
     self.parser.add_argument('--name', type=str, default=current_time, help='folder name to save outputs')
-    self.parser.add_argument('--display_dir', type=str, default='../results/logs', help='path for saving display results')
-    self.parser.add_argument('--result_dir', type=str, default='../results/train', help='path for saving result images and models')
+    self.parser.add_argument('--display_dir', type=str, default='./results/logs', help='path for saving display results')
+    self.parser.add_argument('--result_dir', type=str, default='./results/train', help='path for saving result images and models')
     self.parser.add_argument('--display_freq', type=int, default=1, help='freq (iteration) of display')
     self.parser.add_argument('--img_save_freq', type=int, default=20, help='freq (epoch) of saving images')
     self.parser.add_argument('--model_save_freq', type=int, default=20, help='freq (epoch) of saving models')
@@ -54,7 +54,7 @@ class TestOptions():
     self.parser = argparse.ArgumentParser()
 
     # data loader related
-    self.parser.add_argument('--dataroot', type=str,default='../datasets/database',help='path of data')
+    self.parser.add_argument('--dataroot', type=str,default='./datasets/example_data',help='path of data')
     self.parser.add_argument('--phase', type=str, default='train', help='phase for dataloading')
     self.parser.add_argument('--resize_size', type=int, default=256, help='resized image size for training')
     self.parser.add_argument('--crop_size', type=int, default=1024, help='cropped image size for training')
@@ -65,13 +65,13 @@ class TestOptions():
 
     # ouptput related
     self.parser.add_argument('--num', type=int, default=1, help='number of outputs per image')
-    self.parser.add_argument('--name', type=str, default='109', help='folder name to save outputs')
-    self.parser.add_argument('--result_dir', type=str, default='../results/test', help='path for saving result images and models')
+    self.parser.add_argument('--name', type=str, default='output', help='folder name to save outputs')
+    self.parser.add_argument('--result_dir', type=str, default='./results/test', help='path for saving result images and models')
 
     # model related
     self.parser.add_argument('--concat', type=int, default=1, help='concatenate attribute features for translation, set 0 for using feature-wise transform')
     self.parser.add_argument('--no_ms', action='store_true', help='disable mode seeking regularization')
-    self.parser.add_argument('--resume', type=str, default='../models', help='specified the dir of saved models for resume the training')
+    self.parser.add_argument('--resume', type=str, default='./models/res2.pth', help='specified the dir of saved models for resume the training')
     self.parser.add_argument('--gpu', type=int, default=0, help='gpu')
 
   def parse(self):

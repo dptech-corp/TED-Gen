@@ -26,8 +26,8 @@ def main():
 
   rept_num = 1
   
-  opts.name = '111'
-  opts.resume = '1.pth'
+  # opts.name = '111'
+  # opts.resume = '1.pth'
 
   # model
   print('\n--- load model ---')

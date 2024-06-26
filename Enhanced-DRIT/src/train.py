@@ -3,15 +3,6 @@ from options import TrainOptions
 from dataset import dataset_unpair
 from model import DRIT
 from saver import Saver
-import sys
-# import warnings
-# warnings.filterwarnings("ignore")
-
-# log_print = open('twolayer_c.log', 'a')
-# sys.stdout = log_print
-# sys.stderr = log_print
-
-print('test')
 
 def main():
   # parse options
