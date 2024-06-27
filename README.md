@@ -17,7 +17,7 @@ Auto-resolving atomic structure at van der Waal interfaces using a generative mo
 
 [[Paper](https://github.com/dptech-corp/TED-Gen)]
 
-Authors: Wenqiang Huang, Yuchen Jin, Zhemin Li, Lin Yao*, Yun Chen, Zheng Luo, Shen Zhou, Hongxia Wang, Jinguo Lin, Feng Liu, Zhifeng Gao, Jun Cheng, Linfeng Zhang, Fangping Ouyang*, Shanshan Wang* & Jin Zhang 
+Authors: Wenqiang Huang, Yuchen Jin, Zhemin Li, Lin Yao*, Yun Chen, Zheng Luo, Shen Zhou, Hongxia Wang, Jinguo Lin, Feng Liu, Zhifeng Gao, Jun Cheng, Linfeng Zhang, Fangping Ouyang*, Shanshan Wang* & Jin Zhang* 
 
 Unveiling atomic structures is significant for the relationship construction between microscopic configurations and macroscopic properties of materials.  However, we still lack a rapid, accurate, and robust approach to automatically resolve complex patterns in atomic-resolution microscopy.  Here, we present a Trident strategy-enhanced disentangled representation learning method (a generative model), which utilizes a few unlabeled experimental images with abundant low-cost simulated images to generate a large corpus of annotated simulation data that closely resembles experimental conditions, realizing simultaneous achievement of high quality and large volumes of the training dataset.  A structural inference model is then trained via a residual neural network which can directly deduce the interlayer slip and rotation of diversified and complicated stacking patterns at van der Waals (vdWs) interfaces with picometer-scale accuracy across various materials (ReS2, ReSe2, and MoS2) with different layer numbers (bilayer and trilayers) and demonstrates robustness to defects, imaging quality, and surface contaminations.  The framework can also identify pattern transition interfaces, quantify subtle motif variations, and discriminate moiré patterns that are undistinguishable in frequency domains.  The high-throughput processing ability of our method helps discover a novel vdW epitaxy where various thermodynamically favorable slip stackings can coexist, demonstrating the machine learning contribution to the new knowledge emergence.
 
@@ -151,6 +151,12 @@ cd Enhanced-DRIT
 python ./src/test_transfer.py
 ```
 
+In the following figure, the top panel is the simulation image input, and the bottom panel is the TED generated images.
+
+<p align="center"><img src="./figure/1.png" width=80%></p>
+<p align="center"><b>Generation demo</b></p>
+
+
 Check [Enhanced-DRIT](./Enhanced-DRIT/) for more detalis.
 
 Stacking Pattern Analyzer
@@ -176,7 +182,12 @@ python train.py
 
 #### inference
 
-We recommend using our [online app](https://bohrium.dp.tech/apps/stacking-pattern-analyzer) to verify the parsing results.You can also test it in this [ipynb](./Stacking-Pattern-Analyzer/infer.ipynb) file. In the recommended configuration, inference in ipynb takes an average of about 1s per image.
+We recommend using our [Online App](https://bohrium.dp.tech/apps/stacking-pattern-analyzer) to verify the parsing results.You can also test it in this [ipynb](./Stacking-Pattern-Analyzer/infer.ipynb) file. In the recommended configuration, inference in ipynb takes an average of about 1s per image.
+
+Several bilayer slip stacking ReS2 raw images and inference are showing in the following figure
+
+<p align="center"><img src="./figure/2.png" width=80%></p>
+<p align="center"><b>Inference demo</b></p>
 
 Check this [Stacking-Pattern-Analyzer](./Stacking-Pattern-Analyzer/) for more detalis.
 
@@ -185,3 +196,4 @@ Citation
 
 License
 --------
+This project is licensed under the terms of the MIT license. See [LICENSE](./LICENSE) for additional details.
