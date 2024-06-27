@@ -27,9 +27,11 @@ Hardware requirements
 --------------------------------------------------------------------
 For optimal performance, we recommend a computer with the following specs:
 
-RAM: 25+ GB
-CPU: 4+ cores, 2.4+ GHz/core
-GPU: 32 GB Tesla-V100 *1
+* RAM: 25+ GB
+
+* CPU: 4+ cores, 2.4+ GHz/core
+
+* GPU: 32 GB Tesla-V100 *1
 
 Software requirements
 --------------------------------------------------------------------
@@ -38,9 +40,11 @@ Software requirements
 
 The development version is tested on Linux operating systems. The developmental version has been tested on the following systems:
 
-Linux: Ubuntu 20.04.5 LTS
-Mac OSX:
-Windows:
+* Linux: Ubuntu 20.04.5 LTS
+
+* Mac OSX:
+
+* Windows:
 
 ### Python Dependencies
 
@@ -53,6 +57,7 @@ collections
 cv2
 functools
 subprocess
+sklearn
 numpy
 PIL
 torch
@@ -183,6 +188,9 @@ python train.py
 #### inference
 
 We recommend using our [Online App](https://bohrium.dp.tech/apps/stacking-pattern-analyzer) to verify the parsing results.You can also test it in this [ipynb](./Stacking-Pattern-Analyzer/infer.ipynb) file. In the recommended configuration, inference in ipynb takes an average of about 1s per image.
+
+<p align="center"><img src="./figure/3.png" width=80%></p>
+<p align="center"><b>Online App</b></p>
 
 Several bilayer slip stacking ReS2 raw images and inference are showing in the following figure
 
