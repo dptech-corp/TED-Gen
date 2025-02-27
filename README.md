@@ -15,7 +15,7 @@ Shortcuts
 Auto-resolving atomic structure at van der Waal interfaces using a generative model
 -------------------------------------------------------------------
 
-[[Paper](https://github.com/dptech-corp/TED-Gen)]
+[[Paper](https://arxiv.org/abs/2408.16802)]
 
 Authors: Wenqiang Huang, Yucheng Jin, Zhemin Li, Lin Yao*, Yun Chen, Zheng Luo, Shen Zhou, Hongxia Wang, Jinguo Lin, Feng Liu, Zhifeng Gao, Jun Cheng, Linfeng Zhang, Fangping Ouyang*, Shanshan Wang* & Jin Zhang* 
 
