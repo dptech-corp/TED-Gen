@@ -201,7 +201,6 @@ Check this [Stacking-Pattern-Analyzer](./Stacking-Pattern-Analyzer/) for more de
 
 Citation
 --------
-@software
 
 License
 --------
