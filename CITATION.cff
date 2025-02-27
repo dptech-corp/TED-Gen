@@ -4,8 +4,8 @@ authors:
 - family-names: "Jin"
   given-names: "Yucheng"
   orcid: "https://orcid.org/0009-0008-1800-0304"
-- family-names: "Lisa"
-  given-names: "Mona"
+- family-names: "Huang"
+  given-names: "Wenqiang"
   orcid: "https://orcid.org/0000-0000-0000-0000"
 title: "TED-Gen"
 version: 1.0.0
