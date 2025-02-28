@@ -2,7 +2,6 @@ Official Repository for the paper Auto-resolving the atomic structure at van der
 ==================================================
 
 <a href="https://doi.org/10.5281/zenodo.14937026"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.14937026.svg" alt="DOI"></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
 
 Shortcuts
 ---------
