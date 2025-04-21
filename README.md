@@ -11,7 +11,9 @@ Shortcuts
 - [Generate simulation data by Computem](./Computem_Gen/)
 
 
-**Note**: if you want to install or run our codes, please `cd` to subfolders first.
+**Note01**: if you want to install or run our codes, please `cd` to subfolders first.
+
+**Note02**: If you have any questions and would like to communicate directly with the code author, please send an email to ycjin@stu.xmu.edu.cn. Thank you very much.
 
 
 Auto-resolving the atomic structure at van der Waals interfaces using a generative model
